@@ -10,7 +10,8 @@
 	<body>
 		<div>
 			<header>
-				<h1>new_file</h1>
+				<h1>HELLO HELLO HELLO</h1>
+				<h2> Today is a good day.</h2>
 			</header>
 			<nav>
 				<p>
