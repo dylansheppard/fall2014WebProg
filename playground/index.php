@@ -3,6 +3,13 @@
 <head>
 	<title>Fitness Tracker</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<style type = "text/css">
 
 
@@ -119,12 +126,14 @@
 
 
 <body>
+	<div class="container">
 	<div class="content">
 		<div class="top_block logo">
         	<p> logo will go here, dropdown menu immeditely beneath me. </p>
 				
 		</div>
-		
+	</div>
+	<div class="container">
         <div class="top_block dropdown">
      
 			<div class="content">
@@ -137,11 +146,12 @@
              <a href ="http://cs.newpaltz.edu/~n02395809/signup.php">SIGN UP</a>
              
              </div>
+            </div>
     
     </div>
 		</div>
 		
-		
+		<div class="container">
 	<div class = "features">
     	<p> Some cool pics will go here. </p>
     </div>
@@ -174,7 +184,7 @@
     	<p> This will be an extended, very heartfelt description of the wonderment of this fitness tracker. Perhaps a user testimony will go here... someday.
     	</p>
     </div>
-    
+   </div>
    
 			</div>
 		</div>
