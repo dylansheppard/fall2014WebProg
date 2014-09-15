@@ -5,39 +5,22 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-
+	<link rel="stylesheet" href="components/main.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<style type = "text/css">
 
-
-
-
-
-
-</style>
 </head>
 
 
 <body>
-	<div class="container">
-		<ul class="nav nav-tabs" role="tablist">
-  			<li class="active"><a href="#">Home</a></li>
- 			 <li><a href="food.php">Nutrition</a></li>
-  			<li><a href="#">Exercise</a></li>
-  			<li><a href="#">Blog</a></li>
-  				<li><a href="#">My Profile</a></li>
-  				
-		</ul>
-		
 	
-
+	
+	<?php include ('components/_navbar.php'); ?>
 			
-			
+		<div class = "container">	
 	<div class="jumbotron">
   		<h1>JOIN PLEASE I BEG OF YOU</h1>
   			<p>join join join join join join join join join join join join join join join join join join join join join join join join join join join join join join join join </p>
@@ -45,7 +28,7 @@
 	</div>
     
     </div>
-	</div>
+</div>
 		
 		
 		
@@ -114,6 +97,8 @@
 					</p>
 				</div>
 			</footer>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 
 
