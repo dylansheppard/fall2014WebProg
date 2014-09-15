@@ -8,53 +8,13 @@
 
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<style type = "text/css">
 
 
-.content {
-	min-height: 100%;
-	position: relative;
-	overflow: auto;
-	z-index: 0; 
-}
-
-.background {
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	bottom: 0;
-	margin: 0;
-	padding: 0;
-}
-
-.top_block {
-	width: 100%;
-	display: block; 
-}
-
-.bottom_block {
-	position: absolute;
-	width: 100%;
-	display: block;
-	bottom: 0; 
-}
-
-.left_block {
-	display: block;
-	float: left; 
-}
-
-.right_block {
-	display: block;
-	float: right; 
-}
-
-.center_block {
-	display: block;
-	width: auto; 
-}
 
 .logo {
 	width: 100%;
@@ -121,74 +81,92 @@
 	
 }
 
+
+
 </style>
 </head>
 
 
 <body>
 	<div class="container">
-	<div class="content">
-		<div class="top_block logo">
-        	<p> logo will go here, dropdown menu immeditely beneath me. </p>
-				
-		</div>
+		<ul class="nav nav-tabs" role="tablist">
+  			<li class="active"><a href="#">Home</a></li>
+ 			 <li><a href="#">Nutrition</a></li>
+  			<li><a href="#">Exercise</a></li>
+  			<li><a href="#">Blog</a></li>
+  				<li><a href="#">My Profile</a></li>
+  				
+		</ul>
+		
+	
+
+			
+			
+	<div class="jumbotron">
+  		<h1>JOIN PLEASE I BEG OF YOU</h1>
+  			<p>join join join join join join join join join join join join join join join join join join join join join join join join join join join join join join join join </p>
+  			<p><a href = "signup.php" class="btn btn-primary btn-lg" role="button"> Join</a></p>
 	</div>
-	<div class="container">
-        <div class="top_block dropdown">
-     
-			<div class="content">
-			</div>
-			 <div id = "signup">
-             	
-                <p> Cool sign-up banner will go here. </p>
-            
-             <div class = "button1">
-             <a href ="http://cs.newpaltz.edu/~n02395809/signup.php">SIGN UP</a>
-             
-             </div>
-            </div>
     
     </div>
-		</div>
+	</div>
+		
+		
 		
 		<div class="container">
-	<div class = "features">
-    	<p> Some cool pics will go here. </p>
-    </div>
+	
+    <div class="row">
+  	<div class="col-md-4">
+    	<div class="thumbnail">
+      		<img src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/1601293_10153925389432355_1433297507_n.jpg?oh=d7ff1139df3076d4b74e889ac8558fd2&oe=54CD8581&__gda__=1418004315_c3b8664a3e4d1707cb3a5255024fc241" style = "width:300px; height:300px" alt="...">
+      		<!-- normally, i'd resize images before I place them in, I'm just trying to have some fun with a rather dry layout assignment. Please excuse the random in HTML CSS for now! --> 
+      		<div class="caption">
+        		<h3>Featured User: Greg Denise</h3>
+        			<p>Greg is amongst the fittest and brightest in our community. His healthy lifestyle doesn't stop at the gym. No, Greg abstains from the normal college life, and spends his weekends at yoga retreats! He never eats deli sandwiches, and instead, 
+        				keeps to a raw food vegan diet. Check out his profile for some of his delicious, raw food recipes!</p>
+        			<p><a href="#" class="btn btn-primary" role="button">User's Profile</a> <a href="#" class="btn btn-default" role="button">User's Blog</a></p>
+     		 </div>
+    	</div>
+  		</div>
+	
+	
+	
+  	<div class="col-md-4">
+    	<div class="thumbnail">
+      		<img src="http://placehold.it/300.png/09f/fff" alt="...">
+      		<div class="caption">
+        		<h3>It's totally free!</h3>
+        			<p>Wow it's free! Free free free free free free free free free free  Free free free free free free free free free free  Free free free free free free free free free free  Free free free free free free free free free free
+        				 Free free free free free free free free free free  Free free free free free free free free free free  Free free free free free free free free free free  Free free free free free free free free free free  Free free free free free free free free free free</p>
+        			
+     		 </div>
+    	</div>
+  		</div>
+	
+	
+	
+  	<div class="col-md-4">
+    	<div class="thumbnail">
+      		<img src="http://placehold.it/300.png/09f/fff" alt="...">
+      		<div class="caption">
+        		<h3>FEATURES</h3>
+        			<ul type = "square">
+        				<li>Nutrition Tracker</li>	
+        				<li>Workout Planner</li>
+        				<li>Progress Calander</li>
+        				<li>Fitness Blogs</li>
+        				<li>Social Incentive</li>
+        				<li>AND A WHOLE LOT MORE!</li>
+        			</ul>
+        			
+        			
+     		 </div>
+    	</div>
+  		</div>
+	
+    </div> <!-- end of row -->
     
-    <div class = "features">
-    	<p> TEST </p>
-    </div>
-    
-    <div class = "features">
-    	<p> Images will go here. </p>
-    </div>
-    
-    <div class = "features">
-    	<p> Text text text  </p>
-    </div>
-    
-    <div class = "features">
-    	<p> REASONS TO JOIN </p>
-    </div>
-    
-    <div class = "features">
-    	<p> LOOK AT ALL THESE COOL FEATURES </p>
-    </div>
-    
-    <div class = "features">
-    	<p> One last image here </p>
-    </div>
-    
-    <div class = "features2">
-    	<p> This will be an extended, very heartfelt description of the wonderment of this fitness tracker. Perhaps a user testimony will go here... someday.
-    	</p>
-    </div>
-   </div>
    
-			</div>
-		</div>
-	</div>
 			</div>
 		</div>
 	</div>

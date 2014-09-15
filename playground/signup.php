@@ -3,155 +3,84 @@
 <head>
 	<title>Sign up</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<style type = "text/css">
-
-
-.content {
-	min-height: 100%;
-	position: relative;
-	overflow: auto;
-	z-index: 0; 
-}
-
-.background {
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	bottom: 0;
-	margin: 0;
-	padding: 0;
-}
-
-.top_block {
-	width: 100%;
-	display: block; 
-}
-
-.bottom_block {
-	position: absolute;
-	width: 100%;
-	display: block;
-	bottom: 0; 
-}
-
-.left_block {
-	display: block;
-	float: left; 
-}
-
-.right_block {
-	display: block;
-	float: right; 
-}
-
-.center_block {
-	display: block;
-	width: auto; 
-}
-
-.logo {
-	width: 100%;
-	height: 150px;
-	background-color: #9999ff;
-}
-
-.dropdown {
-	width: 100%;
-	height: 45px;
-	background-color: #9966ff;
-	margin-bottom: 100px;
-}
-
-.signupForm {
-	width: 35%;
-	height: 550px;
-	padding: 40px;
-    margin-left: 70px;
-	margin-right: 20px;
-	margin-top: 50px;
-	margin-bottom: 200px;
-	background-color: #36F;
-	position: relative;
-	display: block;
-	float: left;
 	
-	
-	
-}
-
-
-
-
-
-.button1 {
-	postion: relative;
-	width: 20%;
-	height: 80px;
-	background-color: #666;
-	float: left;
-	display: block;
-	border-radius: 10px;
-	margin-top: 125px;
-	text-align: center;
-	padding-top: 20px;
-	
-}
-
-</style>
-</head>
-
-
-<body>
-	<div class="content">
-		<div class="top_block logo">
-        	<p> logo will go here, dropdown menu immeditely beneath me. </p>
-				
-		</div>
+	#top-row {
+		height: 200px;
+		background-color: #00b2b2;
+	}
 		
-        <div class="top_block dropdown">
-     
-			<div class="content">
-         
-            </div>
-               <div class = "signupForm">
-            <h2> SIGN UP FORM </h2>
-            <form>
-				First name: <input type="text" name="firstname"><br>
-                <br>
-				Last name: <input type="text" name="lastname">
-                <br> <br>
-                Username: <input type ="text" name="username"> 
-                <br> <br>
-                Password: <input type ="password" name="password"> 
-                <br> <br>
-                Retype PW: <input type ="password" name="password"> 
-                <br> <br>
-                 Email Address: <input type ="password" name="password"> 
-                <br> <br>
-                
-                <input type="submit" value="Submit">
-</form> 
-                
-                
-                
-			</form>
-            
-			</div>
-            
-                  <div class = "signupForm">
-            <h4> This will be another banner displaying feautures and happy users.</h4>
-           
-            
-			</div>
+	</style>
+</head>
+<div class = "container">
+<div class = "row">
+	<div class = "col-md 12">
+		<div id ="top-row">
+			<p>Neat banner here.</p>
 			
+		</div>
+	</div>
+	</div>
+</div>
 
-    </div>
-    
-   
-			</div>
+<div class = "container">
+	<div class = "row">
 	
+	
+	<div class = "col-md 6">
+	<form role="form">
+  <div class="form-group">
+    <label for="inputEmail">Email address</label>
+    <input type="email" class="form-control" id="inputEmail" placeholder="Enter email">
+  </div>
+  
+   <div class="form-group">
+    <label for="inputEmail">Verify Email address</label>
+    <input type="email" class="form-control" id="inputEmail" placeholder="Enter email">
+  </div>
+  
+   <div class="form-group">
+    <label for="username">Desired Username</label>
+    <input type="text" class="form-control" id="username" placeholder="Username">
+  </div>
+  
+  <div class="form-group">
+    <label for="userPassword">Password</label>
+    <input type="password" class="form-control" id="userPassword" placeholder="Password">
+  </div>
+  
+  
+    <div class="form-group">
+    <label for="userPassword">Confirm Password</label>
+    <input type="password" class="form-control" id="userPassword" placeholder="Password">
+  </div>
+  
+  <div class="form-group">
+  
+    <label for="exampleInputFile">Profile Picture</label>
+    <input type="file" id="userPic">
+    <p class="help-block">This picture will be displayed on your profile</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Agree to our terms and services.
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</div>
 
-</body>
 
 
+</div>
+</div>
 </html>
