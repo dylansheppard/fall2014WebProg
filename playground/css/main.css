@@ -29,3 +29,11 @@
 			padding-bottom: 5px;
 		}
 	
+		.nav-hover{
+		opacity: 1;
+		transition: all 0.9s ease 0s;
+		}
+		
+		.nav-hover:hover {
+		opacity: .5;
+		}

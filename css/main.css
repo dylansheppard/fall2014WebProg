@@ -1,0 +1,44 @@
+	.search  {
+			padding-left: 30px;
+			background-color: #f4a460;
+		}
+		
+		#user_username{
+			margin-bottom: 15px;
+		}
+		
+		#user_password{
+			margin-bottom: 15px;
+		}
+		
+		#user_remember_me{
+			float: left; 
+			margin-right: 10px;
+		}
+		
+		.sign-in-btn {
+			clear: left;
+			 width: 100%; 
+			 height: 32px; 
+			 font-size: 13px;
+			 margin-bottom: 10px;
+		} 
+		
+		.sign-in-dropdown{
+			padding: 15px; 
+			padding-bottom: 5px;
+		}
+		.navvy{
+			    -moz-transition: all .7s ease-in;
+    		-o-transition: all .7s ease-in;
+    	-webkit-transition: all .7s ease-in;
+   	 transition: all .7s ease-in;
+   	 background: #FFFFFF;
+   	}
+   	 
+		.navvy:hover {
+			
+			background-color:#C0D9D9;
+			
+	
+	

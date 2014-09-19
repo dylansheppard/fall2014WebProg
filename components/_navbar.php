@@ -17,15 +17,15 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="nav-hover nutrition"><a href="food.php">Nutrition</a></li>
-        <li class = "nav-hover fitness"><a href="#">Fitness</a></li>
-        <li class = "nav-hover blog"><a href="#">Blog</a></li>
+        <li class="nutrition"><a href="food.php">Nutrition</a></li>
+        <li class = "fitness"><a href="#">Fitness</a></li>
+        <li class = "blog"><a href="#">Blog</a></li>
       
       </ul>
    
       <ul class="nav navbar-nav navbar-right">
-      	<li class = "signup nav-hover"><a href = "signup.php">Sign Up</a></li>
-        <li class = "dropdown nav-hover">
+      	<li class = "signup"><a href = "signup.php">Sign Up</a></li>
+        <li class = "dropdown">
         	<a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
         		<div class = "dropdown-menu sign-in-dropdown">
         			
