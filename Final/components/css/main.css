@@ -28,17 +28,17 @@
 			padding: 15px; 
 			padding-bottom: 5px;
 		}
-		.navvy{
-			    -moz-transition: all .7s ease-in;
-    		-o-transition: all .7s ease-in;
-    	-webkit-transition: all .7s ease-in;
-   	 transition: all .7s ease-in;
-   	 background: #FFFFFF;
-   	}
-   	 
-		.navvy:hover {
-			
-			background-color:#C0D9D9;
-			
 	
-	
+		.nav-hover{
+		opacity: 1;
+		transition: all 0.9s ease 0s;
+		}
+		
+		.nav-hover:hover {
+		opacity: .2;
+		}
+
+
+	.form-group {
+		width: 50%;
+	}

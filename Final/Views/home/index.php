@@ -1,16 +1,4 @@
-	<div class = "container">	
-	<div class="jumbotron">
-  		<h1>JOIN PLEASE I BEG OF YOU</h1>
-  			<p>join join join join join join join join join join join join join join join join join join join join join join join join join join join join join join join join </p>
-  			<p><a href = "signup.php" class="btn btn-primary btn-lg" role="button"> Join</a></p>
-	</div>
-    
-    </div>
-</div>
-		
-		
-		
-		<div class="container">
+<div class="container">
 	
     <div class="row">
   	<div class="col-md-4">
