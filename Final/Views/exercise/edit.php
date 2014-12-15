@@ -31,20 +31,20 @@
 		 
 		  <div class="form-group">
 		    <label for="txtWeight" class="col-sm-2 control-label">Weight</label>
-		    <div class="col-sm-10">
+		    <div class="col-sm-4">
 		      <input type="number" class="form-control" id="txtWeight" name="Weight" placeholder="Weight" value="<?=$model['Weight']?>">
 		    </div>
 		  </div>
 		   <div class="form-group">
 		    <label for="txtReps" class="col-sm-2 control-label">Reps</label>
-		    <div class="col-sm-10">
+		    <div class="col-sm-4">
 		      <input type="number" class="form-control" id="txtReps" name="Reps" placeholder="Reps" value="<?=$model['Reps']?>">
 		    </div>
 		  </div>
 		  
 		  <div class="form-group">
 		    <label for="txtTime" class="col-sm-2 control-label">Time</label>
-		    <div class="col-sm-8">
+		    <div class="col-sm-4">
 		      
 	     <input type="text" class="form-control" id="cal" name="Time" placeholder="Time"  value="<?=date('m/d/Y H:i:s', strtotime( $model['Time'])) ?>">
 		   
@@ -66,7 +66,7 @@
      
   </div>
   <div class="modal-footer">
-    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" />
+    <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancel" />
     <input type="submit" name="submit" class="btn btn-primary" value="Save changes" />
   </div>
 </form>
@@ -81,7 +81,7 @@
 	
 	$('#dateSet').click(function(){
 			var date = $('#date_manual').handleDtpicker('getDate');
-			window.alert(date.toString());
+			
 		});
 </script>
 

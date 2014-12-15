@@ -84,12 +84,10 @@
 									<a ng click="click(row)" title="Edit" class = "btn btn-default btn-sm toggle-modal edit" data-target="#formModal" href="?action=edit&id={{row.id}}">
 										<i class="glyphicon glyphicon-pencil"></i>
 									</a>
-									<a ng-click="click(row)" title="Delete" class = "btn btn-default btn-sm toggle-modal delete" data-target="#formModal" href="?action=delete&id={{row.id}}">
+									<a ng-click="click(row)" title="Delete" class = "btn btn-danger btn-sm toggle-modal delete" data-target="#formModal" href="?action=delete&id={{row.id}}">
 										<i class="glyphicon glyphicon-trash"></i>
 									</a>
-									<a title="Favorite" id = "favButton" class = "btn btn-default btn-sm fav" href="?action=fav&id={{row.id}}">
-										<i class="glyphicon glyphicon-heart"></i>
-									</a>
+									
 								</td>
 							</tr>
 							
@@ -229,6 +227,7 @@ $(document).ready(function() {
 
 	$('#cal2').appendDtpicker({
 		inline:true
+		
 		
 		
 	});

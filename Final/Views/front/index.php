@@ -4,7 +4,7 @@
 	<div class="jumbotron">
   		<h1>JOIN OUR COMMUNITY</h1>
   			<p>We are a judge-free zone. We strive for the best of all of our memebers. We hope you enjoy the Tracker as much as I have enjoyed making it! </p>
-  			<p><fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+  			<p><<button class = "btn btn-primary" role= "button" ng-click="login()">Login</button></p>
 </fb:login-button></p>
 	</div>
     
@@ -72,6 +72,15 @@
 	</div>
 	
 	<script>
+		myApp.controller('social', function($scope){
+			$socialScope = $scope;
+			$scope.login = function() {
+				FB.login(function(response){
+					checkLoginState();
+				}, {scope: 'user_friends, email'})
+			}
+		});
+		
 		function checkLoginState() {
 			    FB.getLoginStatus(function(response) {
 				    $socialScope.status = response;
@@ -81,6 +90,12 @@
 					      $socialScope.$apply();
 					      console.log(response);
 					    });
+					    
+					    FB.api('/me/taggable_friends', function(response){
+					    	$socialScope.friends = reponse.data;
+					    	$socialScope.$apply();
+					    	console.log(response);
+					    })
 				    }
 			    });
 			  }

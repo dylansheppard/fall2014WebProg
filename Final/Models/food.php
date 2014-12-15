@@ -37,7 +37,7 @@ class Food {
 		$row2 = escape_all($row,$conn);
 		$row2['Time'] = date('Y-m-d H:i:s', strtotime($row2['Time']));
 		//if the row is not empty, we are editing it:
-		if(!empty($row['id'])) {
+		if(!empty($row['id']) && $row2['isFave'] == 0) {
 			$sql = "Update 2014Fall_Food
 					Set Name='$row2[Name]', Calories = '$row2[Calories]', Protein = '$row2[Protein]', Fat = '$row2[Fat],
 					 Carbs = '$row2[Carbs]', Fiber = '$row2[Fiber]', Time = '$row2[Time]', isFave = '$row2[isFave]'

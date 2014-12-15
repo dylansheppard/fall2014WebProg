@@ -30,7 +30,7 @@
 		  
 		   
 
-			
+			<script src="http://platform.fatsecret.com/js?key=fd46dabd35c14e619cf407b4d5dd345f&auto_nav=false"></script>
 			<script src="../components/includes/jquery.simple-dtpicker.js"></script>
 			<script src="../components/includes/jquery.sidr.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

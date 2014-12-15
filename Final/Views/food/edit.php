@@ -1,3 +1,5 @@
+
+<div id="my_container" class="fatsecret_container">
 <form class="form-horizontal" action="?action=save" method="post" >
 	
 	<input type="hidden" name="id" value="<?=$model['id']?>" />
@@ -83,10 +85,11 @@
      
   </div>
   <div class="modal-footer">
-    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" />
+    <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancel" />
     <input type="submit" name="submit" class="btn btn-primary" value="Save changes" />
   </div>
 </form>
+</div>
 
 <script>
 	$('#cal').appendDtpicker({
@@ -95,5 +98,14 @@
 		"closeOnSelected": true
 		
 	});
+	
+	
+
+fatsecret.setContainer("my_container"); 
+fatsecret.setCanvas("home"); 
+
+ 
+fatsecret.variables.navOptions = fatsecret.navFeatures.home;
+
 </script>
 
