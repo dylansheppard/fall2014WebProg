@@ -1,9 +1,10 @@
 
+
 <?php
 
 include_once __DIR__ . '/../components/includes/_all.php';
 
-class Food {
+class Exercise {
 	public static function Blank()
 	{
 		return array('id'=>null,'Name'=>null, 'Calories'=>null, 'Protein' => null, 'Fat' => null, 'Carbs' => null, 'Fiber' => null, 'Time' => date(strtotime('tomorrow')), 'isFave' => null);
@@ -14,7 +15,7 @@ class Food {
 	
 		
 		
-		$sql = " SELECT * FROM 2014Fall_Food";
+		$sql = " SELECT * FROM 2014Fall_Exercise";
 		
 		if($id){
 			$sql .= " WHERE id=$id ";
@@ -31,26 +32,39 @@ class Food {
 	}
 	
 //& means we are passing by reference, meaning the row variable will be altered by this method each time it's called
-	static public function Save(&$row)
+	public static function Save(&$row)
 	{
 		$conn = GetConnection();
 		$row2 = escape_all($row,$conn);
 		$row2['Time'] = date('Y-m-d H:i:s', strtotime($row2['Time']));
 		//if the row is not empty, we are editing it:
-		if(!empty($row['id'])) {
-			$sql = "Update 2014Fall_Food
-					Set Name='$row2[Name]', Calories = '$row2[Calories]', Protein = '$row2[Protein]', Fat = '$row2[Fat],
-					 Carbs = '$row2[Carbs]', Fiber = '$row2[Fiber]', Time = '$row2[Time]', isFave = '$row2[isFave]'
-					WHERE id = '$row2[id]'
+		if(!empty($row['id']) && ($row['isFave'] == 0)) {
+			$sql = "Update 2014Fall_Exercise
+					Set Name='$row2[Name]', Weight = '$row2[Weight]', Rep = '$row2[Rep]', Time = '$row2[Time],
+				   isFave = '$row2[isFave]'
+					WHERE id = $row2[id]
 					";
 					my_print($sql);
 					
 		}
 		//otherwise, we are inserting all new data into this row.
 		else{
-			$sql = "INSERT INTO 2014Fall_Food
-			(Name, Calories, Protein, Fat, Carbs, Fiber, Time, created_at UserID, isFave)
-				   VALUES('$row2[Name]','$row2[Calories]','$row2[Protein]','$row2[Fat]','$row2[Carbs]','$row2[Fiber]','$row2[Time]',Now(),1, '$row2[isFave]')";
+			$sql = "INSERT INTO 2014Fall_Exercise (
+						
+						`created_at` ,
+						 
+						`Name` ,
+						`Weight` ,
+						`Reps` ,
+						`Time` ,
+						`UserID` ,
+						`isFave`
+						)
+						VALUES (
+						Now(),  '$row2[Name]', '$row2[Weight]','$row2[Reps]','$row2[Time]',1,'$row2[isFave]')";
+						
+
+			
 		}
 
  		my_print($sql);
@@ -59,9 +73,8 @@ class Food {
 		$results = $conn->query($sql);
 		$error = $conn->error;
 		
-		if (!error && empty($row['id'])){
+		if (!error && empty($row['id']))
 			$row['id'] = $conn->insert_id;
-		}
 			
 			
 			//always close connection ASAP
@@ -72,7 +85,7 @@ class Food {
 	public static function Delete($id)
 	{
 		$conn = GetConnection();
-		$sql = "DELETE FROM 2014Fall_Food WHERE id = $id";
+		$sql = "DELETE FROM 2014Fall_Exercise WHERE id = $id";
 		echo $sql;
 		$results = $conn->query($sql);
 		$error = $conn->error;
@@ -87,16 +100,13 @@ class Food {
 		
 		if (empty($row['Name']))
 			$errors['Name'] = "please enter a name";
-		if (empty($row['Calories']))
-			$errors['Calories'] = "please enter a calorie amount";
-		if ($row[Calories] > 3000)
-			$errors['Calories'] = "exceeded calorie limit. Surely, you made a mistake?";
-		if (empty($row['Protein']))
-			$errors['Protein'] = "please enter a protein amount";
-		if ($row['Fat'] > 100)
-			$errors['Fat'] = "unless your last meal was pure lard, I think you've made an error.";
-		if (empty($row['Carbs']))
-			$errors['Carbs'] = "please enter amount of carbs.";
+		if (empty($row['Weight']))
+			$errors['Weight'] = "please enter a weight amount";
+		if ($row[Weight] > 1000)
+			$errors['Weight'] = "exceeded weight limit. Surely, you made a mistake?";
+		if (empty($row['Reps']))
+			$errors['Protein'] = "please enter a rep amount";
+		
 		
 		return count($errors) > 0 ? $errors	: false;	
 	}

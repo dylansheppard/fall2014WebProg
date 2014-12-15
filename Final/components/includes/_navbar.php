@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="nutrition"><a href="food.php">Nutrition</a></li>
-        <li class = "fitness"><a href="#">Fitness</a></li>
+        <li class = "fitness"><a href="exercise.php">Fitness</a></li>
         <li class = "blog"><a href="#">Blog</a></li>
       
       </ul>
@@ -27,6 +27,7 @@
       	<li class = "signup"><a href = "signup.php">Sign Up</a></li>
         <li class = "dropdown">
         	<a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+        	
         		<div class = "dropdown-menu sign-in-dropdown">
         			
         			<form action="sign_in" method="post" accept-charset="UTF-8">

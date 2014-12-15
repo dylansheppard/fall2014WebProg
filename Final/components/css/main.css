@@ -1,6 +1,6 @@
 	.search  {
 			padding-left: 30px;
-			background-color: #f4a460;
+			
 		}
 		
 		#user_username{
@@ -28,6 +28,12 @@
 			padding: 15px; 
 			padding-bottom: 5px;
 		}
+		
+	
+		div .form-control {
+			width: 800px;
+		}
+		
 	
 		.nav-hover{
 		opacity: 1;
@@ -39,6 +45,4 @@
 		}
 
 
-	.form-group {
-		width: 50%;
-	}
+	

@@ -3,10 +3,10 @@
 	<input type="hidden" name="id" value="<?=$model['id']?>" />
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-    <h4 class="modal-title">Record a food</h4>
+    <h4 class="modal-title" id="myModalLabel">Record a food</h4>
   </div>
   <div class="modal-body">
-  		<?//print_r($_REQUEST)?>
+  		<?print_r($_REQUEST)?>
   		<? if(!empty($errors)): ?>
   			<div class="alert alert-danger">
   				<ul>
@@ -62,38 +62,18 @@
 		  <div class="form-group">
 		    <label for="txtTime" class="col-sm-2 control-label">Time</label>
 		    <div class="col-sm-8">
-		      
-	     <input type="text" class="form-control" id="cal" name="Time" placeholder="Time"  value="<?=date('m/d/Y H:i:s', strtotime( $model['Time'])) ?>">
-		   
-
-
+		      <input type="datetime" class="form-control" id="txtTime" name="Time" placeholder="Time"  value="<?=date('m/d/Y H:i:s', strtotime( $model['Time'])) ?>">
 		    </div>
 		  </div>
-		   <div class="radio">
+		   <div class="checkbox">
         <label>
-          <input type="radio" name = "isFave" value = "1"> Add to Favorites
+          <input type="checkbox"> Add to Favorites?
         </label>
       </div>
-	   <div class="radio">
-        <label>
-          <input type="radio" name = "isFave" value = "0"> Do not add to Favorites
-        </label>
-      </div>
-      
-     
+
   </div>
   <div class="modal-footer">
     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" />
-    <input type="submit" name="submit" class="btn btn-primary" value="Save changes" />
+    <input type="submit" name="submitFavorite" class="btn btn-primary" value="Save changes" />
   </div>
 </form>
-
-<script>
-	$('#cal').appendDtpicker({
-		"autodateonStart": true,
-		"minuteInterval": 15,
-		"closeOnSelected": true
-		
-	});
-</script>
-

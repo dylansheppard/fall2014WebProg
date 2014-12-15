@@ -1,30 +1,11 @@
-<!doctype html>
-<html>
-<head>
-	<title>Fitness Tracker</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
 
-</head>
-
-
-<body>
-	
-	
-	<? include('components/_navbar.php'); ?>
 			
 		<div class = "container">	
 	<div class="jumbotron">
-  		<h1>JOIN PLEASE I BEG OF YOU</h1>
-  			<p>join join join join join join join join join join join join join join join join join join join join join join join join join join join join join join join join </p>
-  			<p><a href = "signup.php" class="btn btn-primary btn-lg" role="button"> Join</a></p>
+  		<h1>JOIN OUR COMMUNITY</h1>
+  			<p>We are a judge-free zone. We strive for the best of all of our memebers. We hope you enjoy the Tracker as much as I have enjoyed making it! </p>
+  			<p><fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button></p>
 	</div>
     
     </div>
@@ -89,19 +70,44 @@
 			</div>
 		</div>
 	</div>
+	
+	<script>
+		function checkLoginState() {
+			    FB.getLoginStatus(function(response) {
+				    $socialScope.status = response;
+				    if (response.status === 'connected') {
+				      FB.api('/me', function(response) {
+					      $socialScope.me = response;
+					      $socialScope.$apply();
+					      console.log(response);
+					    });
+				    }
+			    });
+			  }
+  
 
-	<footer>
-				<div class="container">
-					<p>
-						&copy; Copyright  by Dylan Sheppard
-					</p>
-				</div>
-			</footer>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+				  window.fbAsyncInit = function() {
+				    FB.init({
+				      appId      : '858309510887822',
+				      xfbml      : true,
+				      cookie     : true,
+				      version    : 'v2.2'
+				    });
+				    checkLoginState();
+				  };
+				
+				  (function(d, s, id){
+				     var js, fjs = d.getElementsByTagName(s)[0];
+				     if (d.getElementById(id)) {return;}
+				     js = d.createElement(s); js.id = id;
+				     js.src = "//connect.facebook.net/en_US/sdk.js";
+				     fjs.parentNode.insertBefore(js, fjs);
+				   }(document, 'script', 'facebook-jssdk'));
 		
-</body>
 
+	</script>
 
-</html>
+	
 

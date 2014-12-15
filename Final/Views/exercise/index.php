@@ -1,13 +1,15 @@
-
+<link rel="stylesheet" href="../components/css/jquery.simple-dtpicker.css">
 <header>
 	<div class = "container">
 	<div class = "row">
 		
 		
 		<div class = "col-md-8">
-			<h3>Track Meals:</h3>
+			<h3>Track Exercise:</h3>
 		</div>
-		
+		<div class = "col-md-4">
+			<h3>Calander</h3>
+			<h6 style="color:grey">Dynamically traverse daily workouts.</h6>
 		</div>
 	</div><!-- end of header row -->
 </header>
@@ -30,7 +32,7 @@
 				  </div>
 				</div>
 				
-				<a id="fav-menu" href="#sidr">Pick from Favorites</a>
+				<a id="fav-menu2" href="#sidr">Pick from Favorites</a>
  
 <div id="sidr">
   <h3>My Favorite Meals</h3>
@@ -54,7 +56,7 @@
 					<button type="button" class="close" data-dismiss="alert">
 						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 					</button>
-					Your meal has been recorded.
+					
 					
 				</div>
 				
@@ -63,26 +65,21 @@
 					<thead>
 						<tr>
 							<th>Name</th>
-							<th>Calories</th>
-							<th>Protein (g)</th>
-							<th>Fat (g)</th>
-							<th>Carbs (g)</th>
-							<th>Fiber (g)</th>
-							<th>Time Recorded</th>
-						</tr>
+							<th>Weight (lb)</th>
+							<th>Reps</th>
+							<th>Time</th>
+							
 					</thead>
 					
 					<tbody>
 						
-						<tr ng-repeat ='row in data'>
+						<tr ng-repeat ="row in data | filter: searchDate">
 							
 								<td>{{row.Name}}</td>
-								<td>{{row.Calories}}</td>
-								<td>{{row.Protein}}</td>
-								<td>{{row.Fat}}</td>
-								<td>{{row.Carbs}}</td>
-								<td>{{row.Fiber}}</td>
+								<td>{{row.Weight}}</td>
+								<td>{{row.Reps}}</td>
 								<td>{{row.Time}}</td>
+							
 								<td>
 									<a ng click="click(row)" title="Edit" class = "btn btn-default btn-sm toggle-modal edit" data-target="#formModal" href="?action=edit&id={{row.id}}">
 										<i class="glyphicon glyphicon-pencil"></i>
@@ -105,34 +102,30 @@
 			
 		</div> 
 			
-		<div class ="col-md-4">
-			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-<div class="well" ng-controller="social" >
-					<img src="http://graph.facebook.com/{{me.id}}/picture" align="left" />
-					<b>{{me.name}}</b><br>
-					{{me.email}}
-			</div>			
-</div> 
+		<div class = "col-md-4">
+			<input ng-model="searchDate" type="text" class="form-control" id="cal2" name="Time" placeholder="Time"  value="">
+			
+		</div>
 			
 		</div> 
 	</div>
 	
-
+	<script src="../components/includes/jquery.simple-dtpicker.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.js"></script>
 	
 
-<script>
+<script type = "text/javascript">
 	 
       var $mContent;
 	  var myApp = angular.module("myApp", [])
       	.controller('index', function($scope, $http){
      		$scope.curRow = null;
+     	
 			$scope.click = function(row){
 				$scope.curRow = row;
 		   	}
-		   	
+		   
 		   $http.get('?format=json&userId=')
 		   .success(function(data){
 		   	$scope.data = data;
@@ -142,6 +135,7 @@
 		   	
 		   });
 		   
+		  
 		   
 		   
      	$('body').on('click',".toggle-modal", function(event){
@@ -206,7 +200,7 @@
  
 
 	$(function(){
-				  $('.nutrition').addClass("active");
+				  $('.fitness').addClass("active");
 				$mContent = $("#formModal .modal-content");
 				
 				var defaultContent = $mContent.html();
@@ -230,71 +224,15 @@
 
 <script>
 $(document).ready(function() {
-  $('#fav-menu').sidr();
+  $('#fav-menu2').sidr();
 });
 
-
-  function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      testAPI();
-    } else if (response.status === 'not_authorized') {
-      // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-    } else {
-      // The person is not logged into Facebook, so we're not sure if
-      // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
-    }
-  }
-  
-  			var $socialScope = null;
-			myApp.controller('social', function($scope){
-					$socialScope = $scope;
-					$socialScope.$apply();
-			});
-			function checkLoginState() {
-			    FB.getLoginStatus(function(response) {
-				    $socialScope.status = response;
-				    if (response.status === 'connected') {
-				      FB.api('/me', function(response) {
-					      $socialScope.me = response;
-					      $socialScope.$apply();
-					      console.log(response);
-					    });
-				    }
-			    });
-			  }
-  
-
+	$('#cal2').appendDtpicker({
+		inline:true
+		
+		
+	});
 
 </script>
 
-<script>
-				  window.fbAsyncInit = function() {
-				    FB.init({
-				      appId      : '858309510887822',
-				      xfbml      : true,
-				      cookie     : true,
-				      version    : 'v2.2'
-				    });
-				    checkLoginState();
-				  };
-				
-				  (function(d, s, id){
-				     var js, fjs = d.getElementsByTagName(s)[0];
-				     if (d.getElementById(id)) {return;}
-				     js = d.createElement(s); js.id = id;
-				     js.src = "//connect.facebook.net/en_US/sdk.js";
-				     fjs.parentNode.insertBefore(js, fjs);
-				   }(document, 'script', 'facebook-jssdk'));
-		</script>
 
